@@ -31,6 +31,7 @@ grails.project.dependency.resolution = {
         mavenLocal()
         mavenCentral()
 
+	mavenRepo(root:"https://repo.grails.org/grails/plugins", name:"newGrailsCentral")
         // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
         //mavenRepo "http://snapshots.repository.codehaus.org"
         //mavenRepo "http://repository.codehaus.org"
@@ -57,6 +58,8 @@ grails.project.dependency.resolution = {
         build ":tomcat:$grailsVersion"
 
         runtime ":database-migration:1.3.2"
+	
+	compile ":spring-security-core:1.2.7.3"
 
         compile ':cache:1.0.1'
     }
