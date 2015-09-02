@@ -11,6 +11,9 @@
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
 
+import grails.plugins.springsecurity.SecurityConfigType
+grails.plugins.springsecurity.securityConfigType = SecurityConfigType.Requestmap
+
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.use.accept.header = false
@@ -89,3 +92,10 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'projetograils.SecUser'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'projetograils.SecUserSecRole'
+grails.plugins.springsecurity.authority.className = 'projetograils.SecRole'
+grails.plugins.springsecurity.requestMap.className = 'projetograils.Requestmap'
+grails.plugins.springsecurity.securityConfigType = 'Requestmap'
