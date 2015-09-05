@@ -23,11 +23,20 @@
 			</g:if>
 			<ol class="property-list item">
 			
-				<g:if test="${itemInstance?.categoria}">
+				<g:if test="${itemInstance?.nome}">
 				<li class="fieldcontain">
-					<span id="categoria-label" class="property-label"><g:message code="item.categoria.label" default="Categoria" /></span>
+					<span id="nome-label" class="property-label"><g:message code="item.nome.label" default="Nome" /></span>
 					
-						<span class="property-value" aria-labelledby="categoria-label"><g:fieldValue bean="${itemInstance}" field="categoria"/></span>
+						<span class="property-value" aria-labelledby="nome-label"><g:fieldValue bean="${itemInstance}" field="nome"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${itemInstance?.valor}">
+				<li class="fieldcontain">
+					<span id="valor-label" class="property-label"><g:message code="item.valor.label" default="Valor" /></span>
+					
+						<span class="property-value" aria-labelledby="valor-label"><g:fieldValue bean="${itemInstance}" field="valor"/></span>
 					
 				</li>
 				</g:if>
@@ -41,6 +50,22 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${itemInstance?.imagem}">
+				<li class="fieldcontain">
+					<span id="imagem-label" class="property-label"><g:message code="item.imagem.label" default="Imagem" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${itemInstance?.categoria}">
+				<li class="fieldcontain">
+					<span id="categoria-label" class="property-label"><g:message code="item.categoria.label" default="Categoria" /></span>
+					
+						<span class="property-value" aria-labelledby="categoria-label"><g:fieldValue bean="${itemInstance}" field="categoria"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${itemInstance?.guardaRoupas}">
 				<li class="fieldcontain">
 					<span id="guardaRoupas-label" class="property-label"><g:message code="item.guardaRoupas.label" default="Guarda Roupas" /></span>
@@ -50,36 +75,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${itemInstance?.imagem}">
-				<li class="fieldcontain">
-					<span id="imagem-label" class="property-label"><g:message code="item.imagem.label" default="Imagem" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${itemInstance?.nome}">
-				<li class="fieldcontain">
-					<span id="nome-label" class="property-label"><g:message code="item.nome.label" default="Nome" /></span>
-					
-						<span class="property-value" aria-labelledby="nome-label"><g:fieldValue bean="${itemInstance}" field="nome"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${itemInstance?.tamanho}">
 				<li class="fieldcontain">
 					<span id="tamanho-label" class="property-label"><g:message code="item.tamanho.label" default="Tamanho" /></span>
 					
 						<span class="property-value" aria-labelledby="tamanho-label"><g:fieldValue bean="${itemInstance}" field="tamanho"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${itemInstance?.valor}">
-				<li class="fieldcontain">
-					<span id="valor-label" class="property-label"><g:message code="item.valor.label" default="Valor" /></span>
-					
-						<span class="property-value" aria-labelledby="valor-label"><g:fieldValue bean="${itemInstance}" field="valor"/></span>
 					
 				</li>
 				</g:if>
