@@ -5,9 +5,9 @@ import projetograils.SecUserSecRole
 
 class BootStrap {
     def init = { servletContext ->
-        SecUser admin = new SecUser(username:'admin', password:'secret', enabled:true).save()
-        SecUser john = new SecUser(username:'john', password:'secret', enabled:true).save()
-        SecUser jane = new SecUser(username:'jane', password:'secret', enabled:true).save()
+        SecUser admin = new SecUser(username:'admin', password:'secret').save()
+        SecUser john = new SecUser(username:'john', password:'secret').save()
+        SecUser jane = new SecUser(username:'jane', password:'secret').save()
         SecRole royalty = new SecRole(authority: 'ROLE_ROYALTY').save()
         SecRole common = new SecRole(authority: 'ROLE_COMMON').save()
         SecUserSecRole.create(admin, royalty)

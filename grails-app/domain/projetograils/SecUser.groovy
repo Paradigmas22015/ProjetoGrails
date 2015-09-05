@@ -6,7 +6,7 @@ class SecUser {
 
 	String username
 	String password
-	boolean enabled
+	boolean enabled = true
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
@@ -18,6 +18,7 @@ class SecUser {
 
 	static mapping = {
 		password column: '`password`'
+		tablePerHierarchy false
 	}
 
 	Set<SecRole> getAuthorities() {
