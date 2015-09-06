@@ -8,4 +8,8 @@ class GuardaRoupas {
     static constraints = {
     	nome nullable:false, blank:false, maxSize:32
     }
+
+    String toString(){
+    	nome
+    }
 }
