@@ -33,6 +33,8 @@
 						<g:sortableColumn property="imagem" title="${message(code: 'item.imagem.label', default: 'Imagem')}" />
 					
 						<g:sortableColumn property="categoria" title="${message(code: 'item.categoria.label', default: 'Categoria')}" />
+
+						<g:sortableColumn property="tamanho" title="${message(code: 'item.tamanho.label', default: 'Tamanho')}" />
 					
 						<th><g:message code="item.guardaRoupas.label" default="Guarda Roupas" /></th>
 					
@@ -51,6 +53,8 @@
 						<td>${fieldValue(bean: itemInstance, field: "imagem")}</td>
 					
 						<td>${fieldValue(bean: itemInstance, field: "categoria")}</td>
+
+						<td>${fieldValue(bean: itemInstance, field: "tamanho")}</td>
 					
 						<td>${fieldValue(bean: itemInstance, field: "guardaRoupas")}</td>
 					
