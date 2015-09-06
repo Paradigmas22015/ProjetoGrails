@@ -99,3 +99,5 @@ grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'projetograils
 grails.plugins.springsecurity.authority.className = 'projetograils.SecRole'
 grails.plugins.springsecurity.requestMap.className = 'projetograils.Requestmap'
 grails.plugins.springsecurity.securityConfigType = 'Requestmap'
+
+grails.config.defaults.locations = [KickstartResources]

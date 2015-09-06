@@ -5,14 +5,19 @@ package projetograils
 import org.junit.*
 import grails.test.mixin.*
 
+/**
+ * CategoriaControllerTests
+ * A unit test class is used to test individual methods or blocks of code without considering the surrounding infrastructure
+ */
 @TestFor(CategoriaController)
 @Mock(Categoria)
 class CategoriaControllerTests {
 
+
     def populateValidParams(params) {
-        assert params != null
-        // TODO: Populate valid properties like...
-        //params["name"] = 'someValidName'
+      assert params != null
+      // TODO: Populate valid properties like...
+      //params["name"] = 'someValidName'
     }
 
     void testIndex() {
@@ -29,9 +34,9 @@ class CategoriaControllerTests {
     }
 
     void testCreate() {
-        def model = controller.create()
+       def model = controller.create()
 
-        assert model.categoriaInstance != null
+       assert model.categoriaInstance != null
     }
 
     void testSave() {
@@ -56,6 +61,7 @@ class CategoriaControllerTests {
         assert flash.message != null
         assert response.redirectedUrl == '/categoria/list'
 
+
         populateValidParams(params)
         def categoria = new Categoria(params)
 
@@ -73,6 +79,7 @@ class CategoriaControllerTests {
 
         assert flash.message != null
         assert response.redirectedUrl == '/categoria/list'
+
 
         populateValidParams(params)
         def categoria = new Categoria(params)
@@ -93,6 +100,7 @@ class CategoriaControllerTests {
         assert response.redirectedUrl == '/categoria/list'
 
         response.reset()
+
 
         populateValidParams(params)
         def categoria = new Categoria(params)

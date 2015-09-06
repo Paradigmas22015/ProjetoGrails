@@ -2,6 +2,10 @@ package projetograils
 
 import org.springframework.dao.DataIntegrityViolationException
 
+/**
+ * CategoriaController
+ * A controller class handles incoming web requests and performs actions such as redirects, rendering views and so on.
+ */
 class CategoriaController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -10,8 +14,8 @@ class CategoriaController {
         redirect(action: "list", params: params)
     }
 
-    def list(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
+    def list() {
+        params.max = Math.min(params.max ? params.int('max') : 10, 100)
         [categoriaInstanceList: Categoria.list(params), categoriaInstanceTotal: Categoria.count()]
     }
 
@@ -26,14 +30,14 @@ class CategoriaController {
             return
         }
 
-        flash.message = message(code: 'default.created.message', args: [message(code: 'categoria.label', default: 'Categoria'), categoriaInstance.id])
+		flash.message = message(code: 'default.created.message', args: [message(code: 'categoria.label', default: 'Categoria'), categoriaInstance.id])
         redirect(action: "show", id: categoriaInstance.id)
     }
 
-    def show(Long id) {
-        def categoriaInstance = Categoria.get(id)
+    def show() {
+        def categoriaInstance = Categoria.get(params.id)
         if (!categoriaInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'categoria.label', default: 'Categoria'), id])
+			flash.message = message(code: 'default.not.found.message', args: [message(code: 'categoria.label', default: 'Categoria'), params.id])
             redirect(action: "list")
             return
         }
@@ -41,10 +45,10 @@ class CategoriaController {
         [categoriaInstance: categoriaInstance]
     }
 
-    def edit(Long id) {
-        def categoriaInstance = Categoria.get(id)
+    def edit() {
+        def categoriaInstance = Categoria.get(params.id)
         if (!categoriaInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'categoria.label', default: 'Categoria'), id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'categoria.label', default: 'Categoria'), params.id])
             redirect(action: "list")
             return
         }
@@ -52,15 +56,16 @@ class CategoriaController {
         [categoriaInstance: categoriaInstance]
     }
 
-    def update(Long id, Long version) {
-        def categoriaInstance = Categoria.get(id)
+    def update() {
+        def categoriaInstance = Categoria.get(params.id)
         if (!categoriaInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'categoria.label', default: 'Categoria'), id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'categoria.label', default: 'Categoria'), params.id])
             redirect(action: "list")
             return
         }
 
-        if (version != null) {
+        if (params.version) {
+            def version = params.version.toLong()
             if (categoriaInstance.version > version) {
                 categoriaInstance.errors.rejectValue("version", "default.optimistic.locking.failure",
                           [message(code: 'categoria.label', default: 'Categoria')] as Object[],
@@ -77,26 +82,26 @@ class CategoriaController {
             return
         }
 
-        flash.message = message(code: 'default.updated.message', args: [message(code: 'categoria.label', default: 'Categoria'), categoriaInstance.id])
+		flash.message = message(code: 'default.updated.message', args: [message(code: 'categoria.label', default: 'Categoria'), categoriaInstance.id])
         redirect(action: "show", id: categoriaInstance.id)
     }
 
-    def delete(Long id) {
-        def categoriaInstance = Categoria.get(id)
+    def delete() {
+        def categoriaInstance = Categoria.get(params.id)
         if (!categoriaInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'categoria.label', default: 'Categoria'), id])
+			flash.message = message(code: 'default.not.found.message', args: [message(code: 'categoria.label', default: 'Categoria'), params.id])
             redirect(action: "list")
             return
         }
 
         try {
             categoriaInstance.delete(flush: true)
-            flash.message = message(code: 'default.deleted.message', args: [message(code: 'categoria.label', default: 'Categoria'), id])
+			flash.message = message(code: 'default.deleted.message', args: [message(code: 'categoria.label', default: 'Categoria'), params.id])
             redirect(action: "list")
         }
         catch (DataIntegrityViolationException e) {
-            flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'categoria.label', default: 'Categoria'), id])
-            redirect(action: "show", id: id)
+			flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'categoria.label', default: 'Categoria'), params.id])
+            redirect(action: "show", id: params.id)
         }
     }
 }
