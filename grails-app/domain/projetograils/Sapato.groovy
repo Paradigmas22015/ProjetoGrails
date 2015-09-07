@@ -8,6 +8,6 @@ class Sapato extends Item {
     }
 
     String toString(){
-    	nome
+    	return nome
     }
 }

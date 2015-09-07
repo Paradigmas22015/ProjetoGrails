@@ -12,6 +12,6 @@ class GuardaRoupas {
     }
 
     String toString(){
-    	nome
+    	return nome
     }
 }

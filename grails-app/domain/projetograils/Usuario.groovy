@@ -17,6 +17,6 @@ class Usuario extends SecUser{
     }
 
     String toString(){
-    	nome
+    	return nome
     }
 }

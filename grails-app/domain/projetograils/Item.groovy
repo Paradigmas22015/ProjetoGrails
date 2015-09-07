@@ -25,6 +25,6 @@ class Item {
     }
 
     String toString(){
-        nome
+        return nome
     }
 }
