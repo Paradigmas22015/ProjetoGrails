@@ -28,8 +28,8 @@
       <li><a href="/ProjetoGrails/guardaRoupas/list">Guarda-Roupas</a></li>
       <li><a href="/ProjetoGrails/roupa/list">Roupas</a></li>
       <li><a href="/ProjetoGrails/sapato/list">Sapatos</a></li>
-      <li><a href="/ProjetoGrails/usuarios/list">Usuários</a></li>
-      <li><a href="/ProjetoGrails/Logout/">Logout</a></li>
+      <li><a href="/ProjetoGrails/usuario/list">Usuários</a></li>
+      <li><a href="/ProjetoGrails/logout/">Logout</a></li>
     </ul>
   </div>
 </div>
