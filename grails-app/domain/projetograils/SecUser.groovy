@@ -11,13 +11,13 @@ class SecUser {
 	boolean accountLocked
 	boolean passwordExpired
 
-	static belongsTo = [guardaroupas: GuardaRoupas]	
+	//static belongsTo = [guardaroupas: GuardaRoupas]	
 
 	static constraints = {
 		username blank: false, unique: true
 		password blank: false
-		guardaroupas unique: true
-		guardaroupas nullable: true
+		//guardaroupas unique: true
+		//guardaroupas nullable: true
 	}
 
 	static mapping = {
