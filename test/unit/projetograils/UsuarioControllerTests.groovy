@@ -5,14 +5,19 @@ package projetograils
 import org.junit.*
 import grails.test.mixin.*
 
+/**
+ * UsuarioControllerTests
+ * A unit test class is used to test individual methods or blocks of code without considering the surrounding infrastructure
+ */
 @TestFor(UsuarioController)
 @Mock(Usuario)
 class UsuarioControllerTests {
 
+
     def populateValidParams(params) {
-        assert params != null
-        // TODO: Populate valid properties like...
-        //params["name"] = 'someValidName'
+      assert params != null
+      // TODO: Populate valid properties like...
+      //params["name"] = 'someValidName'
     }
 
     void testIndex() {
@@ -29,9 +34,9 @@ class UsuarioControllerTests {
     }
 
     void testCreate() {
-        def model = controller.create()
+       def model = controller.create()
 
-        assert model.usuarioInstance != null
+       assert model.usuarioInstance != null
     }
 
     void testSave() {
@@ -56,6 +61,7 @@ class UsuarioControllerTests {
         assert flash.message != null
         assert response.redirectedUrl == '/usuario/list'
 
+
         populateValidParams(params)
         def usuario = new Usuario(params)
 
@@ -73,6 +79,7 @@ class UsuarioControllerTests {
 
         assert flash.message != null
         assert response.redirectedUrl == '/usuario/list'
+
 
         populateValidParams(params)
         def usuario = new Usuario(params)
@@ -93,6 +100,7 @@ class UsuarioControllerTests {
         assert response.redirectedUrl == '/usuario/list'
 
         response.reset()
+
 
         populateValidParams(params)
         def usuario = new Usuario(params)

@@ -2,6 +2,10 @@ package projetograils
 
 import org.springframework.dao.DataIntegrityViolationException
 
+/**
+ * UsuarioController
+ * A controller class handles incoming web requests and performs actions such as redirects, rendering views and so on.
+ */
 class UsuarioController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -10,8 +14,8 @@ class UsuarioController {
         redirect(action: "list", params: params)
     }
 
-    def list(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
+    def list() {
+        params.max = Math.min(params.max ? params.int('max') : 10, 100)
         [usuarioInstanceList: Usuario.list(params), usuarioInstanceTotal: Usuario.count()]
     }
 
@@ -26,14 +30,14 @@ class UsuarioController {
             return
         }
 
-        flash.message = message(code: 'default.created.message', args: [message(code: 'usuario.label', default: 'Usuario'), usuarioInstance.id])
+		flash.message = message(code: 'default.created.message', args: [message(code: 'usuario.label', default: 'Usuario'), usuarioInstance.id])
         redirect(action: "show", id: usuarioInstance.id)
     }
 
-    def show(Long id) {
-        def usuarioInstance = Usuario.get(id)
+    def show() {
+        def usuarioInstance = Usuario.get(params.id)
         if (!usuarioInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'usuario.label', default: 'Usuario'), id])
+			flash.message = message(code: 'default.not.found.message', args: [message(code: 'usuario.label', default: 'Usuario'), params.id])
             redirect(action: "list")
             return
         }
@@ -41,10 +45,10 @@ class UsuarioController {
         [usuarioInstance: usuarioInstance]
     }
 
-    def edit(Long id) {
-        def usuarioInstance = Usuario.get(id)
+    def edit() {
+        def usuarioInstance = Usuario.get(params.id)
         if (!usuarioInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'usuario.label', default: 'Usuario'), id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'usuario.label', default: 'Usuario'), params.id])
             redirect(action: "list")
             return
         }
@@ -52,15 +56,16 @@ class UsuarioController {
         [usuarioInstance: usuarioInstance]
     }
 
-    def update(Long id, Long version) {
-        def usuarioInstance = Usuario.get(id)
+    def update() {
+        def usuarioInstance = Usuario.get(params.id)
         if (!usuarioInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'usuario.label', default: 'Usuario'), id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'usuario.label', default: 'Usuario'), params.id])
             redirect(action: "list")
             return
         }
 
-        if (version != null) {
+        if (params.version) {
+            def version = params.version.toLong()
             if (usuarioInstance.version > version) {
                 usuarioInstance.errors.rejectValue("version", "default.optimistic.locking.failure",
                           [message(code: 'usuario.label', default: 'Usuario')] as Object[],
@@ -77,26 +82,26 @@ class UsuarioController {
             return
         }
 
-        flash.message = message(code: 'default.updated.message', args: [message(code: 'usuario.label', default: 'Usuario'), usuarioInstance.id])
+		flash.message = message(code: 'default.updated.message', args: [message(code: 'usuario.label', default: 'Usuario'), usuarioInstance.id])
         redirect(action: "show", id: usuarioInstance.id)
     }
 
-    def delete(Long id) {
-        def usuarioInstance = Usuario.get(id)
+    def delete() {
+        def usuarioInstance = Usuario.get(params.id)
         if (!usuarioInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'usuario.label', default: 'Usuario'), id])
+			flash.message = message(code: 'default.not.found.message', args: [message(code: 'usuario.label', default: 'Usuario'), params.id])
             redirect(action: "list")
             return
         }
 
         try {
             usuarioInstance.delete(flush: true)
-            flash.message = message(code: 'default.deleted.message', args: [message(code: 'usuario.label', default: 'Usuario'), id])
+			flash.message = message(code: 'default.deleted.message', args: [message(code: 'usuario.label', default: 'Usuario'), params.id])
             redirect(action: "list")
         }
         catch (DataIntegrityViolationException e) {
-            flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'usuario.label', default: 'Usuario'), id])
-            redirect(action: "show", id: id)
+			flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'usuario.label', default: 'Usuario'), params.id])
+            redirect(action: "show", id: params.id)
         }
     }
 }

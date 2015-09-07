@@ -2,6 +2,10 @@ package projetograils
 
 import org.springframework.dao.DataIntegrityViolationException
 
+/**
+ * GuardaRoupasController
+ * A controller class handles incoming web requests and performs actions such as redirects, rendering views and so on.
+ */
 class GuardaRoupasController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -10,8 +14,8 @@ class GuardaRoupasController {
         redirect(action: "list", params: params)
     }
 
-    def list(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
+    def list() {
+        params.max = Math.min(params.max ? params.int('max') : 10, 100)
         [guardaRoupasInstanceList: GuardaRoupas.list(params), guardaRoupasInstanceTotal: GuardaRoupas.count()]
     }
 
@@ -26,14 +30,14 @@ class GuardaRoupasController {
             return
         }
 
-        flash.message = message(code: 'default.created.message', args: [message(code: 'guardaRoupas.label', default: 'GuardaRoupas'), guardaRoupasInstance.id])
+		flash.message = message(code: 'default.created.message', args: [message(code: 'guardaRoupas.label', default: 'GuardaRoupas'), guardaRoupasInstance.id])
         redirect(action: "show", id: guardaRoupasInstance.id)
     }
 
-    def show(Long id) {
-        def guardaRoupasInstance = GuardaRoupas.get(id)
+    def show() {
+        def guardaRoupasInstance = GuardaRoupas.get(params.id)
         if (!guardaRoupasInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'guardaRoupas.label', default: 'GuardaRoupas'), id])
+			flash.message = message(code: 'default.not.found.message', args: [message(code: 'guardaRoupas.label', default: 'GuardaRoupas'), params.id])
             redirect(action: "list")
             return
         }
@@ -41,10 +45,10 @@ class GuardaRoupasController {
         [guardaRoupasInstance: guardaRoupasInstance]
     }
 
-    def edit(Long id) {
-        def guardaRoupasInstance = GuardaRoupas.get(id)
+    def edit() {
+        def guardaRoupasInstance = GuardaRoupas.get(params.id)
         if (!guardaRoupasInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'guardaRoupas.label', default: 'GuardaRoupas'), id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'guardaRoupas.label', default: 'GuardaRoupas'), params.id])
             redirect(action: "list")
             return
         }
@@ -52,15 +56,16 @@ class GuardaRoupasController {
         [guardaRoupasInstance: guardaRoupasInstance]
     }
 
-    def update(Long id, Long version) {
-        def guardaRoupasInstance = GuardaRoupas.get(id)
+    def update() {
+        def guardaRoupasInstance = GuardaRoupas.get(params.id)
         if (!guardaRoupasInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'guardaRoupas.label', default: 'GuardaRoupas'), id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'guardaRoupas.label', default: 'GuardaRoupas'), params.id])
             redirect(action: "list")
             return
         }
 
-        if (version != null) {
+        if (params.version) {
+            def version = params.version.toLong()
             if (guardaRoupasInstance.version > version) {
                 guardaRoupasInstance.errors.rejectValue("version", "default.optimistic.locking.failure",
                           [message(code: 'guardaRoupas.label', default: 'GuardaRoupas')] as Object[],
@@ -77,26 +82,26 @@ class GuardaRoupasController {
             return
         }
 
-        flash.message = message(code: 'default.updated.message', args: [message(code: 'guardaRoupas.label', default: 'GuardaRoupas'), guardaRoupasInstance.id])
+		flash.message = message(code: 'default.updated.message', args: [message(code: 'guardaRoupas.label', default: 'GuardaRoupas'), guardaRoupasInstance.id])
         redirect(action: "show", id: guardaRoupasInstance.id)
     }
 
-    def delete(Long id) {
-        def guardaRoupasInstance = GuardaRoupas.get(id)
+    def delete() {
+        def guardaRoupasInstance = GuardaRoupas.get(params.id)
         if (!guardaRoupasInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'guardaRoupas.label', default: 'GuardaRoupas'), id])
+			flash.message = message(code: 'default.not.found.message', args: [message(code: 'guardaRoupas.label', default: 'GuardaRoupas'), params.id])
             redirect(action: "list")
             return
         }
 
         try {
             guardaRoupasInstance.delete(flush: true)
-            flash.message = message(code: 'default.deleted.message', args: [message(code: 'guardaRoupas.label', default: 'GuardaRoupas'), id])
+			flash.message = message(code: 'default.deleted.message', args: [message(code: 'guardaRoupas.label', default: 'GuardaRoupas'), params.id])
             redirect(action: "list")
         }
         catch (DataIntegrityViolationException e) {
-            flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'guardaRoupas.label', default: 'GuardaRoupas'), id])
-            redirect(action: "show", id: id)
+			flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'guardaRoupas.label', default: 'GuardaRoupas'), params.id])
+            redirect(action: "show", id: params.id)
         }
     }
 }

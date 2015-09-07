@@ -5,14 +5,19 @@ package projetograils
 import org.junit.*
 import grails.test.mixin.*
 
+/**
+ * RoupaControllerTests
+ * A unit test class is used to test individual methods or blocks of code without considering the surrounding infrastructure
+ */
 @TestFor(RoupaController)
 @Mock(Roupa)
 class RoupaControllerTests {
 
+
     def populateValidParams(params) {
-        assert params != null
-        // TODO: Populate valid properties like...
-        //params["name"] = 'someValidName'
+      assert params != null
+      // TODO: Populate valid properties like...
+      //params["name"] = 'someValidName'
     }
 
     void testIndex() {
@@ -29,9 +34,9 @@ class RoupaControllerTests {
     }
 
     void testCreate() {
-        def model = controller.create()
+       def model = controller.create()
 
-        assert model.roupaInstance != null
+       assert model.roupaInstance != null
     }
 
     void testSave() {
@@ -56,6 +61,7 @@ class RoupaControllerTests {
         assert flash.message != null
         assert response.redirectedUrl == '/roupa/list'
 
+
         populateValidParams(params)
         def roupa = new Roupa(params)
 
@@ -73,6 +79,7 @@ class RoupaControllerTests {
 
         assert flash.message != null
         assert response.redirectedUrl == '/roupa/list'
+
 
         populateValidParams(params)
         def roupa = new Roupa(params)
@@ -93,6 +100,7 @@ class RoupaControllerTests {
         assert response.redirectedUrl == '/roupa/list'
 
         response.reset()
+
 
         populateValidParams(params)
         def roupa = new Roupa(params)

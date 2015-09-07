@@ -5,14 +5,19 @@ package projetograils
 import org.junit.*
 import grails.test.mixin.*
 
+/**
+ * SapatoControllerTests
+ * A unit test class is used to test individual methods or blocks of code without considering the surrounding infrastructure
+ */
 @TestFor(SapatoController)
 @Mock(Sapato)
 class SapatoControllerTests {
 
+
     def populateValidParams(params) {
-        assert params != null
-        // TODO: Populate valid properties like...
-        //params["name"] = 'someValidName'
+      assert params != null
+      // TODO: Populate valid properties like...
+      //params["name"] = 'someValidName'
     }
 
     void testIndex() {
@@ -29,9 +34,9 @@ class SapatoControllerTests {
     }
 
     void testCreate() {
-        def model = controller.create()
+       def model = controller.create()
 
-        assert model.sapatoInstance != null
+       assert model.sapatoInstance != null
     }
 
     void testSave() {
@@ -56,6 +61,7 @@ class SapatoControllerTests {
         assert flash.message != null
         assert response.redirectedUrl == '/sapato/list'
 
+
         populateValidParams(params)
         def sapato = new Sapato(params)
 
@@ -73,6 +79,7 @@ class SapatoControllerTests {
 
         assert flash.message != null
         assert response.redirectedUrl == '/sapato/list'
+
 
         populateValidParams(params)
         def sapato = new Sapato(params)
@@ -93,6 +100,7 @@ class SapatoControllerTests {
         assert response.redirectedUrl == '/sapato/list'
 
         response.reset()
+
 
         populateValidParams(params)
         def sapato = new Sapato(params)
