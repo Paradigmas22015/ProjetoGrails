@@ -1,13 +1,4 @@
 <%@ page import="projetograils.Item" %>
-<!doctype html>
-<html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="layout" content="kickstart" />
-	<g:set var="entityName" value="${message(code: 'item.label', default: 'Item')}" />
-	<title><g:message code="default.list.label" args="[entityName]" /></title>
-</head>
-
 <body>
 	
 <section id="list-item" class="first">
@@ -50,15 +41,12 @@
 				<td>${fieldValue(bean: itemInstance, field: "tamanho")}</td>
 
 				<td>${fieldValue(bean: itemInstance, field: "guardaRoupas.dono")}</td>
+			
 			</tr>
 		</g:each>
 		</tbody>
 	</table>
-	<div class="pagination">
-		<bs:paginate total="${itemInstanceTotal}" />
-	</div>
 </section>
 
 </body>
 
-</html>
