@@ -5,7 +5,7 @@ class Usuario extends SecUser{
 	String sobrenome
 	String email
 	String telefone
-
+    
     static hasOne = [guardaRoupas: GuardaRoupas]
 
     static constraints = {
