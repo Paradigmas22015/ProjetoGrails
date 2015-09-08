@@ -1,4 +1,6 @@
 package projetograils
+import projetograils.SecRole
+import projetograils.SecUserSecRole
 
 import org.springframework.dao.DataIntegrityViolationException
 
@@ -29,6 +31,9 @@ class UsuarioController {
             render(view: "create", model: [usuarioInstance: usuarioInstance])
             return
         }
+
+        def commonRole = SecRole.findByAuthority('ROLE_COMMON')
+        SecUserSecRole.create(usuarioInstance, commonRole)
 
 		flash.message = message(code: 'default.created.message', args: [message(code: 'usuario.label', default: 'Usuario'), usuarioInstance.id])
         redirect(action: "show", id: usuarioInstance.id)
