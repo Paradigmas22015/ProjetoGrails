@@ -11,13 +11,14 @@ This menu is used to show function that can be triggered on the content (an obje
 
 		<g:set var="entityName" value="${message(code: params.controller+'.label', default: params.controller.substring(0,1).toUpperCase() + params.controller.substring(1).toLowerCase())}" />
 		
-		<li class="${ params.action == "list" ? 'active' : '' }">
+<%--		<li class="${ params.action == "list" ? 'active' : '' }">
 			<g:link action="list"><i class="icon-th-list"></i> <g:message code="default.list.label" args="[entityName]"/></g:link>
 		</li>
-		<li class="${ params.action == "create" ? 'active' : '' }">
+--%>
+<%--		<li class="${ params.action == "create" ? 'active' : '' }">
 			<g:link action="create"><i class="icon-plus"></i> <g:message code="default.new.label"  args="[entityName]"/></g:link>
 		</li>
-		
+--%>		
 		<g:if test="${ params.action == 'show' || params.action == 'edit' }">
 			<!-- the item is an object (not a list) -->
 			<li class="${ params.action == "edit" ? 'active' : '' }">
