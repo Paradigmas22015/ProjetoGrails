@@ -15,7 +15,7 @@ class Item {
         valor nullable:false, blank:false
         valor (matches: "[0-9]+\\.[0-9]{2}")
         descricao  nullable:false, blank:true, maxSize:1000
-        imagem nullable:true, maxSize:65536
+        imagem nullable:true, maxSize:3000000
         categoria nullable:false
         tamanho nullable:false
     }
