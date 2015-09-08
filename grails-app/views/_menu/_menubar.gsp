@@ -26,10 +26,11 @@
     <ul class="nav nav-pills">
       <li><a href="/ProjetoGrails/">Início</a></li>
       <li><a href="/ProjetoGrails/item/list">Itens</a></li>
-      <li><a href="/ProjetoGrails/guardaRoupas/list">Guarda-Roupas</a></li>
+      <li><a href="/ProjetoGrails/item/create">Novo item</a></li>
+      <li><a href="/ProjetoGrails/guardaRoupas/list">Meu Guarda-Roupas</a></li><!--Mostrar apenas o GuardaRoupas do usuario-->
       <li><a href="/ProjetoGrails/roupa/list">Roupas</a></li>
       <li><a href="/ProjetoGrails/sapato/list">Sapatos</a></li>
-      <li><a href="/ProjetoGrails/usuario/list">Perfil</a></li><!--Usuario pelo id = /ProjetoGrails/usuario/show/"user_id"-->
+      <li><a href="/ProjetoGrails/usuario/list">Perfil</a></li><!--<li><a href="/ProjetoGrails/usuario/show/"userId">Perfil</a></li>-->
       <li><a href="/ProjetoGrails/logout/">Logout</a></li>
       <li><a href="/ProjetoGrails/auth/">Login</a></li>
       <li><a href="/ProjetoGrails/usuario/create">Cadastre-se</a></li>
