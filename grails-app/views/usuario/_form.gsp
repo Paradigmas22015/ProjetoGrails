@@ -18,14 +18,14 @@
 				</div>
 			</div>
 
-			<div class="control-group fieldcontain ${hasErrors(bean: usuarioInstance, field: 'guardaroupas', 'error')} ">
+<%--			<div class="control-group fieldcontain ${hasErrors(bean: usuarioInstance, field: 'guardaroupas', 'error')} ">
 				<label for="guardaroupas" class="control-label"><g:message code="usuario.guardaroupas.label" default="Guardaroupas" /></label>
 				<div class="controls">
 					<g:select id="guardaroupas" name="guardaroupas.id" from="${projetograils.GuardaRoupas.list()}" optionKey="id" value="${usuarioInstance?.guardaroupas?.id}" class="many-to-one" noSelection="['null': '']"/>
 					<span class="help-inline">${hasErrors(bean: usuarioInstance, field: 'guardaroupas', 'error')}</span>
 				</div>
 			</div>
-
+--%>
 			<div class="control-group fieldcontain ${hasErrors(bean: usuarioInstance, field: 'nome', 'error')} required">
 				<label for="nome" class="control-label"><g:message code="usuario.nome.label" default="Nome" /><span class="required-indicator">*</span></label>
 				<div class="controls">
@@ -58,7 +58,7 @@
 				</div>
 			</div>
 
-			<div class="control-group fieldcontain ${hasErrors(bean: usuarioInstance, field: 'accountExpired', 'error')} ">
+<%--			<div class="control-group fieldcontain ${hasErrors(bean: usuarioInstance, field: 'accountExpired', 'error')} ">
 				<label for="accountExpired" class="control-label"><g:message code="usuario.accountExpired.label" default="Account Expired" /></label>
 				<div class="controls">
 					<bs:checkBox name="accountExpired" value="${usuarioInstance?.accountExpired}" />
@@ -89,4 +89,4 @@
 					<span class="help-inline">${hasErrors(bean: usuarioInstance, field: 'passwordExpired', 'error')}</span>
 				</div>
 			</div>
-
+--%>
