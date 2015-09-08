@@ -1,4 +1,4 @@
-<div id="Navbar" class="navbar navbar-fixed-top navbar-inverse">
+<div id="Navbar" class="navbar navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container">
 			<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
@@ -7,9 +7,8 @@
             	<span class="icon-bar"></span>
             	<span class="icon-bar"></span>
 			</a>
-
 			<a class="brand" href="${createLink(uri: '/')}">
-				<img class="logo" src="${resource(plugin: 'kickstart-with-bootstrap', dir:'kickstart/img',file:'grails.png')}" alt="${meta(name:'app.name')}" />
+				<img class="logo" src=http://localhost:8080/ProjetoGrails/less/img/logo.png />
 				Guarda Tudo
 			</a>
 <%-- 

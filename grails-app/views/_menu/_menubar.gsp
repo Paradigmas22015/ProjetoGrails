@@ -31,7 +31,7 @@
       <li><a href="/ProjetoGrails/sapato/list">Sapatos</a></li>
       <li><a href="/ProjetoGrails/usuario/list">Perfil</a></li><!--Usuario pelo id = /ProjetoGrails/usuario/show/"user_id"-->
       <li><a href="/ProjetoGrails/logout/">Logout</a></li>
-      <li><a href="/ProjetoGrails/auth/"></a>Login</li>
+      <li><a href="/ProjetoGrails/auth/">Login</a></li>
       <li><a href="/ProjetoGrails/usuario/create">Cadastre-se</a></li>
     </ul>
   </div>
