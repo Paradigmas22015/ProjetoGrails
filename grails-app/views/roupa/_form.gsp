@@ -26,14 +26,14 @@
 				</div>
 			</div>
 
-			<div class="control-group fieldcontain ${hasErrors(bean: roupaInstance, field: 'imagem', 'error')} ">
+<%--			<div class="control-group fieldcontain ${hasErrors(bean: roupaInstance, field: 'imagem', 'error')} ">
 				<label for="imagem" class="control-label"><g:message code="roupa.imagem.label" default="Imagem" /></label>
 				<div class="controls">
 					<input type="file" id="imagem" name="imagem" />
 					<span class="help-inline">${hasErrors(bean: roupaInstance, field: 'imagem', 'error')}</span>
 				</div>
 			</div>
-
+--%>
 			<div class="control-group fieldcontain ${hasErrors(bean: roupaInstance, field: 'categoria', 'error')} ">
 				<label for="categoria" class="control-label"><g:message code="roupa.categoria.label" default="Categoria" /></label>
 				<div class="controls">

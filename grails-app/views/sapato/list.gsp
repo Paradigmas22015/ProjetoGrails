@@ -17,8 +17,8 @@
 		<thead>
 			<tr>
 			
-				<g:sortableColumn property="imagem" title="${message(code: 'sapato.imagem.label', default: 'Imagem')}" />
-			
+<%--				<g:sortableColumn property="imagem" title="${message(code: 'sapato.imagem.label', default: 'Imagem')}" />
+--%>			
 				<g:sortableColumn property="nome" title="${message(code: 'sapato.nome.label', default: 'Nome')}" />
 			
 				<g:sortableColumn property="valor" title="${message(code: 'sapato.valor.label', default: 'Valor')}" />
@@ -36,8 +36,8 @@
 		<tbody>
 		<g:each in="${sapatoInstanceList}" status="i" var="sapatoInstance">
 			<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
-				<td>${fieldValue(bean: sapatoInstance, field: "imagem")}</td>
-			
+<%--				<td>${fieldValue(bean: sapatoInstance, field: "imagem")}</td>
+--%>			
 				<td><g:link action="show" id="${sapatoInstance.id}">${fieldValue(bean: sapatoInstance, field: "nome")}</g:link></td>
 			
 				<td>${fieldValue(bean: sapatoInstance, field: "valor")}</td>

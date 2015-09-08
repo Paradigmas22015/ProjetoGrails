@@ -26,14 +26,14 @@
 				</div>
 			</div>
 
-			<div class="control-group fieldcontain ${hasErrors(bean: itemInstance, field: 'imagem', 'error')} required">
+<%--			<div class="control-group fieldcontain ${hasErrors(bean: itemInstance, field: 'imagem', 'error')} required">
 				<label for="imagem" class="control-label"><g:message code="item.imagem.label" default="Imagem" /><span class="required-indicator">*</span></label>
 				<div class="controls">
 					<input type="file" id="imagem" name="imagem" />
 					<span class="help-inline">${hasErrors(bean: itemInstance, field: 'imagem', 'error')}</span>
 				</div>
 			</div>
-
+--%>
 			<div class="control-group fieldcontain ${hasErrors(bean: itemInstance, field: 'nome', 'error')} ">
 				<label for="nome" class="control-label"><g:message code="item.nome.label" default="Nome" /></label>
 				<div class="controls">

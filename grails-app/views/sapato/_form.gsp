@@ -26,14 +26,14 @@
 				</div>
 			</div>
 
-			<div class="control-group fieldcontain ${hasErrors(bean: sapatoInstance, field: 'imagem', 'error')} ">
+<%--			<div class="control-group fieldcontain ${hasErrors(bean: sapatoInstance, field: 'imagem', 'error')} ">
 				<label for="imagem" class="control-label"><g:message code="sapato.imagem.label" default="Imagem" /></label>
 				<div class="controls">
 					<input type="file" id="imagem" name="imagem" />
 					<span class="help-inline">${hasErrors(bean: sapatoInstance, field: 'imagem', 'error')}</span>
 				</div>
 			</div>
-
+--%>
 			<div class="control-group fieldcontain ${hasErrors(bean: sapatoInstance, field: 'categoria', 'error')} ">
 				<label for="categoria" class="control-label"><g:message code="sapato.categoria.label" default="Categoria" /></label>
 				<div class="controls">

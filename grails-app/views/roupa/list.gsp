@@ -16,8 +16,8 @@
 	<table class="table table-bordered">
 		<thead>
 			<tr>
-				<g:sortableColumn property="imagem" title="${message(code: 'roupa.imagem.label', default: 'Imagem')}" />
-
+<%--				<g:sortableColumn property="imagem" title="${message(code: 'roupa.imagem.label', default: 'Imagem')}" />
+--%>
 				<g:sortableColumn property="nome" title="${message(code: 'roupa.nome.label', default: 'Nome')}" />
 			
 				<g:sortableColumn property="valor" title="${message(code: 'roupa.valor.label', default: 'Valor')}" />
@@ -35,8 +35,8 @@
 		<tbody>
 		<g:each in="${roupaInstanceList}" status="i" var="roupaInstance">
 			<tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
-				<td>${fieldValue(bean: roupaInstance, field: "imagem")}</td>
-
+<%--				<td>${fieldValue(bean: roupaInstance, field: "imagem")}</td>
+--%>
 				<td><g:link action="show" id="${roupaInstance.id}">${fieldValue(bean: roupaInstance, field: "nome")}</g:link></td>
 			
 				<td>${fieldValue(bean: roupaInstance, field: "valor")}</td>

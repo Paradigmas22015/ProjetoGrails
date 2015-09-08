@@ -38,11 +38,11 @@
 				
 			</tr>
 		
-			<tr class="prop">
+<%--			<tr class="prop">
 				<td valign="top" class="name"><g:message code="item.imagem.label" default="Imagem" /></td>
 				
 			</tr>
-		
+--%>		
 			<tr class="prop">
 				<td valign="top" class="name"><g:message code="item.nome.label" default="Nome" /></td>
 				
