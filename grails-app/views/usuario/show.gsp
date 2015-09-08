@@ -18,27 +18,6 @@
 		<tbody>
 		
 			<tr class="prop">
-				<td valign="top" class="name"><g:message code="usuario.username.label" default="Username" /></td>
-				
-				<td valign="top" class="value">${fieldValue(bean: usuarioInstance, field: "username")}</td>
-				
-			</tr>
-		
-			<tr class="prop">
-				<td valign="top" class="name"><g:message code="usuario.password.label" default="Password" /></td>
-				
-				<td valign="top" class="value">${fieldValue(bean: usuarioInstance, field: "password")}</td>
-				
-			</tr>
-		
-			<tr class="prop">
-				<td valign="top" class="name"><g:message code="usuario.guardaroupas.label" default="Guardaroupas" /></td>
-				
-				<td valign="top" class="value"><g:link controller="guardaRoupas" action="show" id="${usuarioInstance?.guardaroupas?.id}">${usuarioInstance?.guardaroupas?.encodeAsHTML()}</g:link></td>
-				
-			</tr>
-		
-			<tr class="prop">
 				<td valign="top" class="name"><g:message code="usuario.nome.label" default="Nome" /></td>
 				
 				<td valign="top" class="value">${fieldValue(bean: usuarioInstance, field: "nome")}</td>
@@ -53,7 +32,14 @@
 			</tr>
 		
 			<tr class="prop">
-				<td valign="top" class="name"><g:message code="usuario.email.label" default="Email" /></td>
+				<td valign="top" class="name"><g:message code="usuario.username.label" default="Username" /></td>
+				
+				<td valign="top" class="value">${fieldValue(bean: usuarioInstance, field: "username")}</td>
+				
+			</tr>
+
+			<tr class="prop">
+				<td valign="top" class="name"><g:message code="usuario.email.label" default="E-mail" /></td>
 				
 				<td valign="top" class="value">${fieldValue(bean: usuarioInstance, field: "email")}</td>
 				
@@ -66,6 +52,25 @@
 				
 			</tr>
 		
+<%--			<tr class="prop">
+				<td valign="top" class="name"><g:message code="usuario.password.label" default="Password" /></td>
+				
+				<td valign="top" class="value">${fieldValue(bean: usuarioInstance, field: "password")}</td>
+				
+			</tr>
+--%>		
+			<tr class="prop">
+				<td valign="top" class="name"><g:message code="usuario.guardaroupas.label" default="Guarda-Roupas" /></td>
+				
+				<td valign="top" class="value">
+				<g:if test="${usuarioInstance?.guardaroupas?.id == null}">
+					<a href="/ProjetoGrails/guardaRoupas/create">Crie seu Guarda-Roupas</a></p>
+				</g:if>
+				<g:else>
+					<g:link controller="guardaRoupas" action="show" id="${usuarioInstance?.guardaroupas?.id}">${usuarioInstance?.guardaroupas?.encodeAsHTML()}</g:link></td>
+				</g:else>
+			</tr>
+<%--		
 			<tr class="prop">
 				<td valign="top" class="name"><g:message code="usuario.accountExpired.label" default="Account Expired" /></td>
 				
@@ -93,7 +98,7 @@
 				<td valign="top" class="value"><g:formatBoolean boolean="${usuarioInstance?.passwordExpired}" /></td>
 				
 			</tr>
-		
+--%>
 		</tbody>
 	</table>
 </section>
