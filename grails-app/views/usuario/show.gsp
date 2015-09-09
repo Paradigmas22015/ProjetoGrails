@@ -67,7 +67,7 @@
 					<a href="/ProjetoGrails/guardaRoupas/create">Crie seu Guarda-Roupas</a></p>
 				</g:if>
 				<g:else>
-					<g:link controller="guardaRoupas" action="show" id="${projetograils.GuardaRoupas.findByDono(usuarioInstance)}">${projetograils.GuardaRoupas.findByDono(usuarioInstance).encodeAsHTML()}</g:link></td>
+					<g:link controller="guardaRoupas" action="show" id="${projetograils.GuardaRoupas.findByDono(usuarioInstance).id}">${projetograils.GuardaRoupas.findByDono(usuarioInstance).encodeAsHTML()}</g:link></td>
 				</g:else>
 			</tr>
 <%--		
