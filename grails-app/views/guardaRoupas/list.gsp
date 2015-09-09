@@ -19,6 +19,9 @@
 			
 				<g:sortableColumn property="nome" title="${message(code: 'guardaRoupas.nome.label', default: 'Nome')}" />
 			
+				<%--<th><g:message code="guardaRoupas.dono.label" default="Dono" /></th>
+				--%>
+			
 			</tr>
 		</thead>
 		<tbody>
@@ -27,13 +30,17 @@
 			
 				<td><g:link action="show" id="${guardaRoupasInstance.id}">${fieldValue(bean: guardaRoupasInstance, field: "nome")}</g:link></td>
 			
+				<%-- <td>${fieldValue(bean: guardaRoupasInstance, field: "dono")}</td>
+				--%>
+			
 			</tr>
 		</g:each>
 		</tbody>
 	</table>
-	<div class="pagination">
+	<%--<div class="pagination">
 		<bs:paginate total="${guardaRoupasInstanceTotal}" />
 	</div>
+	--%>
 </section>
 
 </body>

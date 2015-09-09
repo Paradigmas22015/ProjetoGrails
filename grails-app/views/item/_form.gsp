@@ -18,7 +18,7 @@
 				</div>
 			</div>
 
-			<div class="control-group fieldcontain ${hasErrors(bean: itemInstance, field: 'guardaRoupas', 'error')} required">
+<%--			<div class="control-group fieldcontain ${hasErrors(bean: itemInstance, field: 'guardaRoupas', 'error')} required">
 				<label for="guardaRoupas" class="control-label"><g:message code="item.guardaRoupas.label" default="Guarda Roupas" /><span class="required-indicator">*</span></label>
 				<div class="controls">
 					<g:select id="guardaRoupas" name="guardaRoupas.id" from="${projetograils.GuardaRoupas.list()}" optionKey="id" required="" value="${itemInstance?.guardaRoupas?.id}" class="many-to-one"/>
@@ -26,7 +26,7 @@
 				</div>
 			</div>
 
-<%--			<div class="control-group fieldcontain ${hasErrors(bean: itemInstance, field: 'imagem', 'error')} required">
+			<div class="control-group fieldcontain ${hasErrors(bean: itemInstance, field: 'imagem', 'error')} required">
 				<label for="imagem" class="control-label"><g:message code="item.imagem.label" default="Imagem" /><span class="required-indicator">*</span></label>
 				<div class="controls">
 					<input type="file" id="imagem" name="imagem" />

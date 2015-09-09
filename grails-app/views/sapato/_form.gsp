@@ -50,11 +50,11 @@
 				</div>
 			</div>
 
-			<div class="control-group fieldcontain ${hasErrors(bean: sapatoInstance, field: 'guardaRoupas', 'error')} required">
+<%--			<div class="control-group fieldcontain ${hasErrors(bean: sapatoInstance, field: 'guardaRoupas', 'error')} required">
 				<label for="guardaRoupas" class="control-label"><g:message code="sapato.guardaRoupas.label" default="Guarda Roupas" /><span class="required-indicator">*</span></label>
 				<div class="controls">
 					<g:select id="guardaRoupas" name="guardaRoupas.id" from="${projetograils.GuardaRoupas.list()}" optionKey="id" required="" value="${sapatoInstance?.guardaRoupas?.id}" class="many-to-one"/>
 					<span class="help-inline">${hasErrors(bean: sapatoInstance, field: 'guardaRoupas', 'error')}</span>
 				</div>
 			</div>
-
+--%>

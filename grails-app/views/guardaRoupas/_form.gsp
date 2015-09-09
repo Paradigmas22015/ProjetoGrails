@@ -10,6 +10,15 @@
 				</div>
 			</div>
 
+<%--			<div class="control-group fieldcontain ${hasErrors(bean: guardaRoupasInstance, field: 'dono', 'error')} required">
+				<label for="dono" class="control-label"><g:message code="guardaRoupas.dono.label" default="Dono" /><span class="required-indicator">*</span></label>
+				<div class="controls">
+
+					<g:select id="dono" name="dono.id" from="${projetograils.Usuario.list()}" optionKey="id" required="" value="${guardaRoupasInstance?.dono?.id}" class="many-to-one"/>
+					<span class="help-inline">${hasErrors(bean: guardaRoupasInstance, field: 'dono', 'error')}</span>
+				</div>
+			</div>
+--%>
 			<div class="control-group fieldcontain ${hasErrors(bean: guardaRoupasInstance, field: 'itens', 'error')} ">
 				<label for="itens" class="control-label"><g:message code="guardaRoupas.itens.label" default="Itens" /></label>
 				<div class="controls">

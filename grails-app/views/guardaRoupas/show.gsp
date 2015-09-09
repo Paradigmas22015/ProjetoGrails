@@ -25,6 +25,13 @@
 			</tr>
 		
 			<tr class="prop">
+				<td valign="top" class="name"><g:message code="guardaRoupas.dono.label" default="Dono" /></td>
+				
+				<td valign="top" class="value"><g:link controller="usuario" action="show" id="${guardaRoupasInstance?.dono?.id}">${guardaRoupasInstance?.dono?.encodeAsHTML()}</g:link></td>
+				
+			</tr>
+		
+			<tr class="prop">
 				<td valign="top" class="name"><g:message code="guardaRoupas.itens.label" default="Itens" /></td>
 				
 				<td valign="top" style="text-align: left;" class="value">

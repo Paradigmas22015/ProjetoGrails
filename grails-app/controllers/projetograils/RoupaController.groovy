@@ -1,5 +1,6 @@
 package projetograils
-
+import projetograils.GuardaRoupas
+import grails.plugins.springsecurity.SpringSecurityService
 import org.springframework.dao.DataIntegrityViolationException
 
 /**
@@ -7,6 +8,7 @@ import org.springframework.dao.DataIntegrityViolationException
  * A controller class handles incoming web requests and performs actions such as redirects, rendering views and so on.
  */
 class RoupaController {
+    SpringSecurityService springSecurityService
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -25,6 +27,7 @@ class RoupaController {
 
     def save() {
         def roupaInstance = new Roupa(params)
+        roupaInstance.guardaRoupas = GuardaRoupas.findByDono(springSecurityService.currentUser)
         if (!roupaInstance.save(flush: true)) {
             render(view: "create", model: [roupaInstance: roupaInstance])
             return
