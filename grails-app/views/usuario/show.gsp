@@ -63,11 +63,11 @@
 				<td valign="top" class="name"><g:message code="usuario.guardaroupas.label" default="Guarda-Roupas" /></td>
 				
 				<td valign="top" class="value">
-				<g:if test="${usuarioInstance?.guardaroupas?.id == null}">
+				<g:if test="${projetograils.GuardaRoupas.findByDono(usuarioInstance) == null}">
 					<a href="/ProjetoGrails/guardaRoupas/create">Crie seu Guarda-Roupas</a></p>
 				</g:if>
 				<g:else>
-					<g:link controller="guardaRoupas" action="show" id="${usuarioInstance?.guardaroupas?.id}">${usuarioInstance?.guardaroupas?.encodeAsHTML()}</g:link></td>
+					<g:link controller="guardaRoupas" action="show" id="${projetograils.GuardaRoupas.findByDono(usuarioInstance)}">${projetograils.GuardaRoupas.findByDono(usuarioInstance).encodeAsHTML()}</g:link></td>
 				</g:else>
 			</tr>
 <%--		
