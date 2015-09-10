@@ -28,15 +28,19 @@
 	  			<div class="pull-left">
 					<%--Left-side entries--%>
 	  			</div>
-/>														
+												
 <%-- 						<g:render template="/_menu/config"/>
 					<g:render template="/_menu/info"/>														
 					<g:render template="/_menu/user"/><!-- NOTE: the renderDialog for the "Register" modal dialog MUST be placed outside the NavBar (at least for Bootstrap 2.1.1): see bottom of main.gsp -->
 					<g:render template="/_menu/admin"/>--%>														
-<%-- 					<g:render template="/_menu/search"/> --%>
+		<div class="pull-right">			
+					<form class="navbar-search pull-left" action="/ProjetoGrails/searchable" method="get" id="searchableForm" name="searchableForm">
+        <input  class="search-query span2" name="q" value="Procure itens" size="50" id="q" type="text"> <input class="btn btn-inverse btn-small"  value="Procurar" type="submit">
+    </form>
 	  			</div>
 
 			</div>
+</div>
 			
 		</div>
 	</div>

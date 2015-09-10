@@ -1,6 +1,7 @@
 package projetograils
 
 class Item {
+	static searchable = true   
 	String nome
 	String descricao
 	Float valor

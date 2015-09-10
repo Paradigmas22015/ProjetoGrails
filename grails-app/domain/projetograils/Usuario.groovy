@@ -1,6 +1,6 @@
 package projetograils
 
-class Usuario extends SecUser{
+class Usuario extends SecUser{   
 	String nome
 	String sobrenome
 	String email
