@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	
+<font color="black">
 <section id="list-item" class="first">
 
 	<table class="table table-bordered">
@@ -58,7 +58,7 @@
 		<bs:paginate total="${itemInstanceTotal}" />
 	</div>
 </section>
-
+</font>
 </body>
 
 </html>

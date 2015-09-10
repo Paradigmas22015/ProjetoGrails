@@ -18,3 +18,10 @@
     <link href="http://bootswatch.com/2/css/font-awesome.min.css" rel="stylesheet">
     <link href="http://bootswatch.com/2/css/bootswatch.css" rel="stylesheet">
 </header>
+<!--
+<link href="http://localhost:8080/ProjetoGrails/less/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://localhost:8080/ProjetoGrails/less/css/bootstrap-responsive.min.css" rel="stylesheet">
+     <link href="http://localhost:8080/ProjetoGrails/less/css/font-awesome.min.css" rel="stylesheet">
+     <link href="http://localhost:8080/ProjetoGrails/less/css/bootswatch.css" rel="stylesheet">
+----!>
+

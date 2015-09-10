@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	
+<font color="black">	
 <section id="list-sapato" class="first">
 
 	<table class="table table-bordered">
@@ -59,7 +59,7 @@
 		<bs:paginate total="${sapatoInstanceTotal}" />
 	</div>
 </section>
-
+</font>
 </body>
 
 </html>

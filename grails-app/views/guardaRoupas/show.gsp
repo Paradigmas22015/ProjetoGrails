@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<font color="black">
 
 <section id="show-guardaRoupas" class="first">
 
@@ -47,7 +48,7 @@
 		</tbody>
 	</table>
 </section>
-
+</font>
 </body>
 
 </html>

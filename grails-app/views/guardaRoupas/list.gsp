@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	
+	<font color="black">
 <section id="list-guardaRoupas" class="first">
 
 	<table class="table table-bordered">
@@ -42,7 +42,7 @@
 	</div>
 	--%>
 </section>
-
+</font>
 </body>
 
 </html>
