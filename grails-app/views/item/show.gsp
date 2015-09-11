@@ -18,16 +18,33 @@
 		<tbody>
 		
 			<tr class="prop">
+				<td valign="top" class="name"><g:message code="item.nome.label" default="Nome" /></td>
+				
+				<td valign="top" class="value">${fieldValue(bean: itemInstance, field: "nome")}</td>
+				
+			</tr>
+			<tr class="prop">
+				<td valign="top" class="name"><g:message code="item.valor.label" default="Valor" /></td>
+				
+				<td valign="top" class="value">${fieldValue(bean: itemInstance, field: "valor")}</td>
+				
+			</tr>
+			<tr class="prop">
+				<td valign="top" class="name"><g:message code="item.descricao.label" default="Descricao" /></td>
+				
+				<td valign="top" class="value">${fieldValue(bean: itemInstance, field: "descricao")}</td>
+				
+			</tr>
+			<tr class="prop">
 				<td valign="top" class="name"><g:message code="item.categoria.label" default="Categoria" /></td>
 				
 				<td valign="top" class="value">${fieldValue(bean: itemInstance, field: "categoria")}</td>
 				
 			</tr>
-		
 			<tr class="prop">
-				<td valign="top" class="name"><g:message code="item.descricao.label" default="Descricao" /></td>
+				<td valign="top" class="name"><g:message code="item.tamanho.label" default="Tamanho" /></td>
 				
-				<td valign="top" class="value">${fieldValue(bean: itemInstance, field: "descricao")}</td>
+				<td valign="top" class="value">${fieldValue(bean: itemInstance, field: "tamanho")}</td>
 				
 			</tr>
 		
@@ -43,26 +60,8 @@
 				
 			</tr>
 --%>		
-			<tr class="prop">
-				<td valign="top" class="name"><g:message code="item.nome.label" default="Nome" /></td>
-				
-				<td valign="top" class="value">${fieldValue(bean: itemInstance, field: "nome")}</td>
-				
-			</tr>
 		
-			<tr class="prop">
-				<td valign="top" class="name"><g:message code="item.tamanho.label" default="Tamanho" /></td>
-				
-				<td valign="top" class="value">${fieldValue(bean: itemInstance, field: "tamanho")}</td>
-				
-			</tr>
 		
-			<tr class="prop">
-				<td valign="top" class="name"><g:message code="item.valor.label" default="Valor" /></td>
-				
-				<td valign="top" class="value">${fieldValue(bean: itemInstance, field: "valor")}</td>
-				
-			</tr>
 		
 		</tbody>
 	</table>

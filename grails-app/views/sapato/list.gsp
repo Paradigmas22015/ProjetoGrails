@@ -49,7 +49,7 @@
 			
 				<td>${fieldValue(bean: sapatoInstance, field: "tamanho")}</td>
 
-				<td>${fieldValue(bean: itemInstance, field: "guardaRoupas.dono")}</td>
+				<td><g:link controller="usuario" action="show" id="${sapatoInstance?.guardaRoupas?.dono?.id}">${sapatoInstance?.guardaRoupas?.dono?.encodeAsHTML()}</g:link></td>
 			
 			</tr>
 		</g:each>

@@ -39,17 +39,17 @@
 			
 <%--				<td>${fieldValue(bean: itemInstance, field: "imagem")}</td>
 --%>			
-				<td>${fieldValue(bean: itemInstance, field: "nome")}</td>
+				<td><g:link action="show" id="${itemInstance.id}">${fieldValue(bean: itemInstance, field: "nome")}</g:link></td>
 
 				<td>${fieldValue(bean: itemInstance, field: "valor")}</td>
 
 				<td>${fieldValue(bean: itemInstance, field: "descricao")}</td>
 
-				<td><g:link action="show" id="${itemInstance.id}">${fieldValue(bean: itemInstance, field: "categoria")}</g:link></td>
+				<td>${fieldValue(bean: itemInstance, field: "categoria")}</td>
 			
 				<td>${fieldValue(bean: itemInstance, field: "tamanho")}</td>
 
-				<td>${fieldValue(bean: itemInstance, field: "guardaRoupas.dono")}</td>
+				<td><g:link controller="usuario" action="show" id="${itemInstance?.guardaRoupas?.dono?.id}">${itemInstance?.guardaRoupas?.dono?.encodeAsHTML()}</g:link></td>
 			</tr>
 		</g:each>
 		</tbody>
