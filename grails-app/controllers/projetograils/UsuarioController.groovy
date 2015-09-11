@@ -1,7 +1,7 @@
 package projetograils
 import projetograils.SecRole
 import projetograils.SecUserSecRole
-
+import grails.plugins.springsecurity.SpringSecurityService
 import org.springframework.dao.DataIntegrityViolationException
 
 /**
@@ -9,6 +9,7 @@ import org.springframework.dao.DataIntegrityViolationException
  * A controller class handles incoming web requests and performs actions such as redirects, rendering views and so on.
  */
 class UsuarioController {
+    SpringSecurityService springSecurityService
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -40,10 +41,13 @@ class UsuarioController {
     }
 
     def show() {
-        def usuarioInstance = Usuario.get(params.id)
+        //def usuarioInstance = Usuario.get(params.id)
+        def usuarioInstance = springSecurityService.currentUser
         if (!usuarioInstance) {
-			flash.message = message(code: 'default.not.found.message', args: [message(code: 'usuario.label', default: 'Usuario'), params.id])
-            redirect(action: "list")
+			flash.message = "Voce precisa estar logado para visualizar Perfil.\n Cadastre-se caso ainda nao seja um usuario."
+            //flash.message = message(code: 'default.not.found.message', args: [message(code: 'usuario.label', default: 'Usuario'), params.id])
+            //redirect(action: "list")
+            render(view: "create", model: [usuarioInstance: null])
             return
         }
 

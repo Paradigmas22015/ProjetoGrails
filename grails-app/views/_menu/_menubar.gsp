@@ -30,7 +30,6 @@
       <li><a href="/ProjetoGrails/item/list">Itens</a></li>
       <li><a href="/ProjetoGrails/sapato/list">Sapatos</a></li>
       <li><a href="/ProjetoGrails/roupa/list">Roupas</a></li>
-      <li><a href="/ProjetoGrails/guardaRoupas/list">Meu Guarda-Roupas</a></li><!--Mostrar apenas o GuardaRoupas do usuario-->
       <li><a href="/ProjetoGrails/sapato/create">Criar Sapato</a></li>
       <li><a href="/ProjetoGrails/roupa/create">Criar Roupa</a></li>
       <li><a href="http://localhost:8080/ProjetoGrails/usuario/show/<sec:loggedInUserInfo field='id'/>" >Perfil</a></li>
