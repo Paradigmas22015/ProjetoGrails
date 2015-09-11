@@ -33,7 +33,7 @@ class RoupaController {
             return
         }
 
-		flash.message = message(code: 'default.created.message', args: [message(code: 'roupa.label', default: 'Roupa'), roupaInstance.id])
+		flash.message = "Roupa criada com sucesso!"
         redirect(action: "show", id: roupaInstance.id)
     }
 

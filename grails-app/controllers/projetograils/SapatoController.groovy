@@ -33,7 +33,7 @@ class SapatoController {
             return
         }
 
-		flash.message = message(code: 'default.created.message', args: [message(code: 'sapato.label', default: 'Sapato'), sapatoInstance.id])
+		flash.message = "Sapato criado com sucesso!"
         redirect(action: "show", id: sapatoInstance.id)
     }
 

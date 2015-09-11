@@ -34,7 +34,7 @@ class ItemController {
             return
         }
 
-		flash.message = message(code: 'default.created.message', args: [message(code: 'item.label', default: 'Item'), itemInstance.id])
+		flash.message = "Item criado com sucesso!"
         redirect(action: "show", id: itemInstance.id)
     }
 
